@@ -68,7 +68,7 @@ The full dataset including raw and cleaned CSV files and the Power BI `.pbix` fi
 
 ## ⚙️ Phase 1 — Python: Data Cleaning & Feature Engineering
 
-**Script:** `chocolate_analysis.py`
+**Script:** `Chocolate_Sales.ipynb`
 
 **What the script does:**
 - Loads all 5 raw CSV files into Pandas DataFrames
@@ -87,15 +87,7 @@ The full dataset including raw and cleaned CSV files and the Power BI `.pbix` fi
 
 ## 🗄️ Phase 2 — MySQL: Database & Business Queries
 
-**Script:** `queries.sql`
-
-**Schema design — Star schema:**
-```
-fact_sales → dim_products
-           → dim_stores
-           → dim_customers
-           → dim_calendar
-```
+**Script:** `Chocolate_sales.sql`
 
 **6 analytical queries written:**
 
@@ -119,27 +111,27 @@ The dashboard has **5 pages** with interactive slicers and page navigation butto
 ---
 
 ### 🏠 Home Page
-![Home](images/CRA-1.png)
+![Home](Images/CRA-1.png)
 
 ---
 
 ### 📈 Sales Overview
-![Sales Overview](images/CRA-2.png)
+![Sales Overview](Images/CRA-2.png)
 
 ---
 
 ### 🏪 Store Performance
-![Store Performance](images/CRA-3.png)
+![Store Performance](Images/CRA-3.png)
 
 ---
 
 ### 🍫 Product Analytics
-![Product Analytics](images/CRA-4.png)
+![Product Analytics](Images/CRA-4.png)
 
 ---
 
 ### 👥 Customer Insights
-![Customer Insights](images/CRA-5.png)
+![Customer Insights](Images/CRA-5.png)
 
 ---
 
@@ -170,20 +162,20 @@ pip install pandas numpy sqlalchemy pymysql
 
 4. Create MySQL database:
 ```sql
-CREATE DATABASE chocolate_retail;
+CREATE DATABASE chocolate_sales;
 ```
 
-5. Update the connection string in `chocolate_analysis.py`:
+5. Update the connection string in `Chocolate_sales.ipnyb`:
 ```python
-engine = create_engine('mysql+pymysql://root:yourpassword@localhost/chocolate_retail')
+engine = create_engine('mysql+pymysql://root:yourpassword@localhost/chocolate_sales')
 ```
 
 6. Run the Python script:
 ```bash
-python chocolate_analysis.py
+python Chocolate_Sales.ipynb
 ```
 
-7. Open `queries.sql` in MySQL Workbench and run the queries
+7. Open `Chocolate_sales.sql` in MySQL Workbench and run the queries
 
 8. Open the `.pbix` file in Power BI Desktop and refresh the data connection
 
